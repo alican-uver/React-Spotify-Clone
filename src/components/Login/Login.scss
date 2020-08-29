@@ -1,0 +1,19 @@
+@import '../../scss/index.scss';
+
+.login {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: $black;
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+    &__button{
+        text-decoration: none;
+        padding: 20px;
+        background: $green;
+        color: $white;           
+        border-radius: 99px;
+    }
+}
