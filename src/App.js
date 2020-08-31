@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Login from "./components/Login/Login";
 import { useDataLayerValue } from "./context/DataLayer";
 import { getTokenFromUrl } from "./spotify/spotify";
 import SpotifyWebApi from 'spotify-web-api-js';
+import Player from "./components/Player/Player";
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [token, setToken] = useState(null);
-  const [{}, dispatch] = useDataLayerValue();
+  const [{ user, token }, dispatch] = useDataLayerValue();
+  console.log(useDataLayerValue())
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -16,22 +17,31 @@ function App() {
     const _token = hash.access_token;
 
     if (_token) {
-      setToken(_token);
-
+      dispatch({
+        type: "SET_TOKEN",
+        token: _token,
+      })
       spotify.setAccessToken(_token);
       spotify.getMe().then(user => {
-        console.log("person", user)
+
+        dispatch({
+          type: "SET_USER",
+          user:user,
+        })
       })
 
     }
 
-    console.log("have token", token)
+    // console.log("have token", token)
+  }, [dispatch]);
 
-  }, []);
+  console.log("person", user)
+  console.log("token", token)
+
 
   return (
     <div>
-      {token ? <h1> I am in</h1> : <Login />}
+      {token ? <Player /> : <Login />}
     </div>
   );
 }
