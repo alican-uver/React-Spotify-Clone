@@ -1,0 +1,40 @@
+@import '../../scss/index.scss';
+
+.sidebar {
+    border:1px solid #000;
+    height: 100vh;
+    background: #040404;
+    color:#fff;
+    min-width: 232px;
+    padding: 10px;
+    // Sidebar top
+    &__top {
+        display:flex;
+        align-items: center;
+    }
+    &__logo {
+        width:100%;
+        max-width: 60px;
+        height: auto;
+        filter: invert(1);
+        &-text {
+            text-transform: capitalize;
+            font-size: 1.6rem;
+        }
+    }
+    &__title {
+        font-size: 12px;
+        text-transform: uppercase;
+
+    }
+    // Sidebar top end
+    hr {
+        width: 90%;
+        margin: 10px auto;
+        border: 0;
+        height: 1px;
+        background: $grey;
+    }
+
+    
+}
