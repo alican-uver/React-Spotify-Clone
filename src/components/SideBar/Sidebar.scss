@@ -6,7 +6,7 @@
     background: #040404;
     color:#fff;
     min-width: 232px;
-    padding: 10px;
+    padding: 10px 15px;
     // Sidebar top
     &__top {
         display:flex;
@@ -30,7 +30,7 @@
     // Sidebar top end
     hr {
         width: 90%;
-        margin: 10px auto;
+        margin: 10px 0;
         border: 0;
         height: 1px;
         background: $grey;

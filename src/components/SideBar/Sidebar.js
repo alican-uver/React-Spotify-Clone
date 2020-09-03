@@ -3,11 +3,15 @@ import "./Sidebar.scss";
 import spotifyLogo from "../../images/logo.png";
 import SidebarOption from "../SidebarOption/SidebarOption";
 // Icons
-import HomeIcon from '@material-ui/icons/Home';
-import SearchIcon from '@material-ui/icons/Search';
-import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
+import HomeIcon from "@material-ui/icons/Home";
+import SearchIcon from "@material-ui/icons/Search";
+import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
+import { useDataLayerValue } from "../../context/DataLayer";
 
 const Sidebar = () => {
+  const [{ playlists }, dispatch] = useDataLayerValue();
+  console.log(playlists);
+
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -17,9 +21,16 @@ const Sidebar = () => {
       <SidebarOption title="Home" Icon={HomeIcon} />
       <SidebarOption title="Search" Icon={SearchIcon} />
       <SidebarOption title="Your Library" Icon={LibraryMusicIcon} />
-        <br/>
-        <strong className="sidebar__title">playlists</strong>
-        <hr/>
+      <br />
+      <strong className="sidebar__title">playlists</strong>
+      <hr />
+      {
+        playlists?.items?.map((playlist, index) => {
+          return (
+            <SidebarOption key = {index} title = {playlist.name} />
+          )
+        }) 
+      }
     </div>
   );
 };
