@@ -4,6 +4,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body::-webkit-scrollbar{
+  display: none;
+}
 
 body {
   margin: 0;
@@ -18,6 +21,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+// Range input custom css
+.range-bar {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+.range-bar:focus {
+  outline: none;
+}
+.range-bar::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #7d7d7d;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+.range-bar::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px;
+  height: 12px;
+  width: 12px;
+  border-radius: 25px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+.range-bar:focus::-webkit-slider-runnable-track {
+  background: #7d7d7d;
+}
+
 
 
 

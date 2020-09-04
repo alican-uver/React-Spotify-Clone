@@ -1,8 +1,59 @@
+@import "../../scss/index.scss";
+
 .footer {
-    position: fixed;
-    bottom: 0;
-    height: 65px;
-    width: 100%;
-    background: #282828;
-    padding: 20px;
+  position: fixed;
+  bottom: 0;
+  height: 90px;
+  width: 100%;
+  background: #282828;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // width: 97%;
+  &__left {
+    flex: 0.3;
+  }
+  &__center {
+    flex: 0.4;
+    color: $white;
+    @include flex-center();
+    justify-content: space-between;
+    // padding: 0 100px;
+    .player-controls {
+      width: 100%;
+      margin: auto;
+      &__buttons {
+        margin: auto;
+        max-width: 224px;
+        @include flex-center();
+        justify-content: space-between;
+        .control-button {
+          font-size: 20px;
+        }
+      }
+      &__bar {
+        @include flex-center();
+        gap: 1rem;
+        text-align: center;
+        background: transparent;
+        font-size: 12px;
+      }
+    }
+    .control-button__green {
+        color: $grey;
+        &:hover {
+          color: $white;
+        }
+        &--scale {
+          font-size: 40px !important;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+  }
+  &__right {
+    flex: 0.3;
+  }
 }
