@@ -7,8 +7,7 @@
   width: 100%;
   background: #282828;
   padding: 0 16px;
-  display: flex;
-  justify-content: space-between;
+  @include flex-center();
   align-items: center;
   // width: 97%;
   &__left {
@@ -37,8 +36,8 @@
     &__icons{
       padding-left: 15px;
       svg{
-        margin-right: 10px;
-        font-size: 16px;
+        margin-right: 13px;
+        font-size: 18px;
         color: $grey;
         &:hover{
           color: $white;

@@ -1,40 +1,54 @@
-@import '../../scss/index.scss';
+@import "../../scss/index.scss";
 
 .sidebar {
-    border:1px solid #000;
-    height: 100vh;
-    background: #040404;
-    color:#fff;
-    min-width: 232px;
-    padding: 10px 15px;
-    // Sidebar top
-    &__top {
-        display:flex;
-        align-items: center;
+  border: 1px solid #000;
+  height: 100vh;
+  background: #040404;
+  color: #fff;
+  min-width: 232px;
+  padding: 10px 15px;
+  // Sidebar top
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    filter: invert(1);
+    &-text {
+      text-transform: capitalize;
+      font-size: 1.6rem;
     }
-    &__logo {
-        width:100%;
-        max-width: 60px;
-        height: auto;
-        filter: invert(1);
-        &-text {
-            text-transform: capitalize;
-            font-size: 1.6rem;
-        }
+  }
+  &__title {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  &__playlists {
+    max-height: 250px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+      &-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background: transparent;
+      }
+      &-thumb{
+        background-color: $grey;
+        border-radius: 10px;
+        height: 0.3rem;
+      }
     }
-    &__title {
-        font-size: 12px;
-        text-transform: uppercase;
-
-    }
-    // Sidebar top end
-    hr {
-        width: 90%;
-        margin: 10px 0;
-        border: 0;
-        height: 1px;
-        background: $grey;
-    }
-
-    
+  }
+  // Sidebar top end
+  hr {
+    width: 90%;
+    margin: 10px 0;
+    border: 0;
+    height: 1px;
+    background: $grey;
+  }
 }

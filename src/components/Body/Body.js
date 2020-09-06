@@ -1,14 +1,13 @@
 import React from 'react';
+import Header from '../Header/Header';
 import './Body.scss';
 
 const Body = () => {
     return (
         <div className="body">
-            Body
+            <Header />
         </div>
     )
 }
 
 export default Body;
-
-
