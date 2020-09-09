@@ -76,11 +76,8 @@
         &:hover {
           color: $white;
         }
-        &--scale {
+        &--big {
           font-size: 40px !important;
-          &:hover {
-            transform: scale(1.1);
-          }
         }
       }
   }

@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="player-controls__buttons">
             <ShuffleIcon className="control-button control-button__green" />
             <SkipPreviousIcon className="control-button control-button__green" />
-            <PlayCircleOutlineIcon className="control-button control-button__green control-button__green--scale" />
+            <PlayCircleOutlineIcon className="control-button control-button__green control-button__green--big scale" />
             <SkipNextIcon className="control-button buttons-icon" />
             <RepeatIcon className="control-button control-button__green" />
           </div>

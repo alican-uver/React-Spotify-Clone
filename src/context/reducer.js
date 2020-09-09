@@ -27,7 +27,7 @@ const reducer = (state, action) => {
         case 'SET_CHILL_TRACKS':
             return {
                 ...state,
-                chill_tracks: action.response
+                chill_tracks: action.chill_tracks
             }
         default:
             return state;

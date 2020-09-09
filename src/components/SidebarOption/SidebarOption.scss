@@ -4,7 +4,7 @@
     color:$grey;
     height:40px;
     cursor: pointer;
-    transition:0.2s color ease-in;
+    transition:$t-3;
     @include flex-center();
     &:hover {
         color:$white;

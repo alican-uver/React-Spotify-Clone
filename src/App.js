@@ -21,8 +21,8 @@ function App() {
         token: _token,
       });
       spotify.setAccessToken(_token);
-      spotify.getMe().then(user => {
 
+      spotify.getMe().then(user => {
         dispatch({
           type: "SET_USER",
           user
@@ -36,14 +36,12 @@ function App() {
         })
       });
 
-      spotify.getPlaylist("37i9dQZF1DX6VdMW310YC7").then(response => {
-          console.log(response)
+      spotify.getPlaylist("37i9dQZF1DX6VdMW310YC7").then(chill_tracks => {
         dispatch({
           type: "SET_CHILL_TRACKS",
-          chill_tracks: response
+          chill_tracks
         })
       })
-
     }
 
   }, [dispatch]);
