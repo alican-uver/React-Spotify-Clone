@@ -9,7 +9,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   const [{ token }, dispatch] = useDataLayerValue();
-
+  
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
@@ -33,6 +33,14 @@ function App() {
         dispatch({
           type: "SET_PLAYLISTS",
           playlists
+        })
+      });
+
+      spotify.getPlaylist("37i9dQZF1DX6VdMW310YC7").then(response => {
+          console.log(response)
+        dispatch({
+          type: "SET_CHILL_TRACKS",
+          chill_tracks: response
         })
       })
 
