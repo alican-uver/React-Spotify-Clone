@@ -1,4 +1,15 @@
-@mixin flex-center {
-    display: flex;
-    align-items: center;
+.dot {
+    &::before {
+      content: ".";
+      position: relative;
+      margin: 0 4px;
+    }
+}
+
+.underline {
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+        color:$white;
+    }
 }

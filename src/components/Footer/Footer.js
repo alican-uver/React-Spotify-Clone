@@ -24,10 +24,10 @@ const Footer = () => {
             alt=""
           />
           <div className="footer-album__info">
-            <a href=" " className="footer-album__song-name">
+            <a href=" " className="footer-album__song-name underline">
               Starboy
             </a>
-            <a href=" " className="footer-album__artist-name">
+            <a href=" " className="footer-album__artist-name underline">
               The Weeknd
             </a>
           </div>

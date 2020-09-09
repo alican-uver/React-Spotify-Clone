@@ -1,0 +1,27 @@
+@import '../../scss/index';
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    &__left {
+        background: $white;
+        color: $grey;
+        @include flex-center();
+        border-radius: 30px;
+        padding: 10px;
+        flex: 0.5;
+        min-width: 90px;
+        input{
+            border: none;
+            width: 100%;
+            outline: none;
+        }
+    }
+    &__right{
+        @include flex-center;
+        h4 {
+            margin-left: 10px;
+        }
+    }
+}
