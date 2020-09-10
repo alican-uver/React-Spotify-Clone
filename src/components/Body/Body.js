@@ -1,12 +1,12 @@
-import { Favorite, MoreHoriz, PlayCircleFilled } from "@material-ui/icons";
+import { Favorite, MoreHoriz, PlayCircleFilled, Schedule } from "@material-ui/icons";
 import React from "react";
 import { useDataLayerValue } from "../../context/DataLayer";
 import Header from "../Header/Header";
+import SingleSong from "../SingleSong/SingleSong";
 import "./Body.scss";
 
 const Body = ({ spotify }) => {
   const [{ chill_tracks }] = useDataLayerValue();
-  console.log(chill_tracks);
   return (
     <div className="body">
       <div className="body__top">
@@ -41,13 +41,18 @@ const Body = ({ spotify }) => {
           <MoreHoriz className="body__icon body__icon--grey" />
         </div>
         {/* playlist songs */}
-        {
-            chill_tracks?.tracks?.items?.map(track => {
-                return (
-                    <p>{track.track.name} </p>
-                )
-            })
-        }
+        <div className="body__tracks">
+          <div className="body__tracks--top">
+            <div>#</div>
+            <div>Title</div>
+            <div>Album</div>
+            <Schedule />
+          </div>
+          {chill_tracks?.tracks?.items?.map((track, index) => {
+            const { id } = track.track;
+            return <SingleSong key={id} songInfo={track} index={index} />;
+          })}
+        </div>
       </div>
     </div>
   );

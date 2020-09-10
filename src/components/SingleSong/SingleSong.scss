@@ -1,0 +1,21 @@
+@import '../../scss/index.scss';
+
+.track {
+    display: grid;
+    grid-template-columns: 16px 4fr 2fr minmax(110px,1fr);
+    grid-gap: 10px;
+    padding-bottom: 1rem;
+    &__image {
+        width: 40px;
+        object-fit: cover;
+    }
+    &__details {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__artist {
+        font-size: 14px;
+        color:$grey;
+    }
+}

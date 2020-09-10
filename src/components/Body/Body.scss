@@ -2,12 +2,11 @@
 
 .body {
   color: $white;
-  background-color: #59CBB7;
+  background-color: #59cbb7;
   margin-left: 232px;
   &__top {
     padding: 30px;
-    background: linear-gradient(transparent,rgba(0,0,0,.5));
-
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
   }
   &__content {
     display: flex;
@@ -24,51 +23,67 @@
     object-fit: cover;
     box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
   }
-    .playlist {
-          & * {
-            padding-top: 5px;
-          }
-          &__root {
-            font-size: 12px;
-          }
-          &__name {
-            @media screen and (min-width: 992px) {
-              font-size: 96px;
-              line-height: 96px;
-            }
-            font-size: 72px;
-            line-height: 72px;
-            font-weight: 900;
-            letter-spacing: -0.04em;
-          }
-          &__description {
-            font-size: 14px;
-            a {
-              &:hover {
-                text-decoration: underline;
-              }
-            }
-          }
-          &__time-props {
-            @include flex-center();
-          }
+  .playlist {
+    & * {
+      padding-top: 5px;
     }
-  &__icons{
+    &__root {
+      font-size: 12px;
+    }
+    &__name {
+      @media screen and (min-width: 992px) {
+        font-size: 96px;
+        line-height: 96px;
+      }
+      font-size: 72px;
+      line-height: 72px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+    &__description {
+      font-size: 14px;
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &__time-props {
+      @include flex-center();
+    }
+  }
+  &__songs {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), #121212);
+  }
+  &__tracks {
+    padding: 0 32px;
+    &--top{
+      display: grid;
+      grid-template-columns: 16px 4fr 2fr minmax(110px,1fr);
+      grid-gap: 10px;
+      border-bottom: 1px solid $grey;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      color: $grey;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+  &__icons {
     @include flex-center;
     padding: 24px 32px;
-    background-image: linear-gradient(rgba(0,0,0,.6),#121212);
   }
-  &__icon{
+  &__icon {
     margin-right: 24px;
     font-size: 32px !important;
     color: $green;
-    &--big{
+    &--big {
       font-size: 66px !important;
       margin-right: 32px;
     }
-    &--grey{
+    &--grey {
       color: $grey;
-      &:hover{
+      &:hover {
         color: $white;
       }
     }
