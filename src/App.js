@@ -30,6 +30,7 @@ function App() {
       });
 
       spotify.getUserPlaylists().then(playlists => {
+        console.log(playlists);
         dispatch({
           type: "SET_PLAYLISTS",
           playlists
@@ -50,9 +51,9 @@ function App() {
   // console.log("token", token)
 
   return (
-    <div>
+    <>
       {token ? <Player /> : <Login />}
-    </div>
+    </>
   );
 }
 

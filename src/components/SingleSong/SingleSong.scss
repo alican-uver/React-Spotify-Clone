@@ -2,9 +2,12 @@
 
 .track {
     display: grid;
-    grid-template-columns: 16px 4fr 2fr minmax(110px,1fr);
+    grid-template-columns: 20px 4fr 2fr minmax(110px,1fr);
     grid-gap: 10px;
     padding-bottom: 1rem;
+    > div {
+        @include flex-center;
+    }
     &__image {
         width: 40px;
         object-fit: cover;
@@ -17,5 +20,8 @@
     &__artist {
         font-size: 14px;
         color:$grey;
+    }
+    &__index {
+        justify-content: center;
     }
 }

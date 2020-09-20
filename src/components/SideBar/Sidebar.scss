@@ -2,7 +2,7 @@
 
 .sidebar {
   border: 1px solid $black;
-  // height: 100vh;
+  height: 100vh;
   background: #040404;
   color: $white;
   min-width: 232px;
@@ -31,7 +31,7 @@
     text-transform: uppercase;
   }
   &__playlists {
-    max-height: 250px;
+    max-height: 50vh;
     overflow-y: scroll;
     &::-webkit-scrollbar {
       width: 0.5rem;
@@ -40,7 +40,7 @@
         border-radius: 10px;
         background: transparent;
       }
-      &-thumb{
+      &-thumb {
         background-color: $grey;
         border-radius: 10px;
         height: 0.3rem;

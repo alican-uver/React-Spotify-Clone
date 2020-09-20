@@ -12,7 +12,7 @@ const SingleSong = ({ songInfo, index }) => {
   console.log(track);
   return (
     <div className="track">
-      <span className="track__index"> {index + 1} </span>
+      <div className="track__index"> {index + 1} </div>
       <div className="track__details">
         <img className="track__image" src={track.album.images[2].url} alt="" />
         <div>
