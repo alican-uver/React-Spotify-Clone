@@ -6,7 +6,9 @@ const SingleSong = ({ songInfo, index }) => {
 
   const transDuration = () => {
     let msDuration = track.duration_ms;
-    return msDuration;
+    var minutes = Math.floor(msDuration / 60000);
+    var seconds = ((msDuration % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
   };
 
   console.log(track);
@@ -20,7 +22,7 @@ const SingleSong = ({ songInfo, index }) => {
           <div className="track__artists">
             {track.artists
               .map((track) => (
-                <a href= {track.uri} key={track.id} className="track__artist underline">
+                <a href={track.uri} key={track.id} className="track__artist underline">
                   {track.name}
                 </a>
               ))
